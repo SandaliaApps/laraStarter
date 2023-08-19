@@ -1,0 +1,3 @@
+https://www.itsolutionstuff.com/post/laravel-custom-email-verification-system-exampleexample.html
+
+https://www.itsolutionstuff.com/post/laravel-custom-forgot-reset-password-exampleexample.html

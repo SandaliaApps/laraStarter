@@ -1,0 +1,30 @@
+{
+    "name": "sandalia-apps/lara-starter",
+    "description": "This is complete starter package of multi auth user management complete multi auth usermanagement",
+    "type": "library",
+    "require-dev": {
+        "yajra/laravel-datatables-oracle":"^10.8.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SandaliaApps\\LaraStarter\\": "src/",
+            "SandaliaApps\\LaraStarter\\Database\\Factories\\": "database/factories/",
+            "SandaliaApps\\LaraStarter\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Md Delower Hossain",
+            "email": "delower@sandalia.com.bd"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SandaliaApps\\LaraStarter\\LaraStarterServiceProvider"
+            ]
+        }
+    }
+}
