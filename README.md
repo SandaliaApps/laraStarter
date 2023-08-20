@@ -1,5 +1,3 @@
-# laraStarter
-
 ## Complete Laravel Starter Package
 
 [![SandaliaApps](https://avatars.githubusercontent.com/u/142171757?s=48&v=4)](https://sandalia.com.bd/apps)
@@ -29,3 +27,39 @@ And of course laraStarter itself is open source with a [public repository][dill]
  on GitHub.
 
 ## Installation
+
+LaraStarter requires [Laravel](https://laravel.com/) v10+ to run (laraStarter is not tested with earlier version of Larave yet).
+
+Install a fresh copy of Laravel. Check  [How to Install Laravel](https://laravel.com/docs/10.x#your-first-laravel-project)
+
+****Don't install any authenticatation packages because you won't need any
+****Follow the following steps
+1. Migrate database using the following command
+```sh
+php artisan migrate
+```
+2. Install laraStarter Package
+```sh
+composer require sandalia-apps/lara-starter
+```
+3. Publish Assets
+```sh
+php artisan vendor:publish --tag=public --force
+```
+4. Migrate database again using the following command
+```sh
+php artisan migrate
+```
+5. Add following CONSTANT in .env file with Recaptch v3 Site_Key & Secret_Key from [Google Recaptcha](https://www.google.com/recaptcha/about/) 
+```sh
+RECAPTCHA_SITE_KEY=Your_Site_Key
+RECAPTCHA_SECRET_KEY=YOur_Secret_Key
+```
+6. Start Sever
+```sh
+php artisan serve
+```
+7. Then What! Registration & Login systems are fully operational with beautiful admin panel sucure by google recaptcha v3. Just Try and provide feedback. 
+#### Still working on Documentation & many upcomming features soon
+#### First stable version will be released soon with full documentation
+### Any suggestionations are welcome
