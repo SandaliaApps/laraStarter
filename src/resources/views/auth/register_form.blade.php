@@ -18,7 +18,7 @@
 <div class="register-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="{{ route('home') }}" class="h1"><b>{{config('app.name','LaraStarter')}}</b></a>
+      <a href="{{ url('/') }}" class="h1"><b>{{config('app.name','LaraStarter')}}</b></a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Register a new membership</p>

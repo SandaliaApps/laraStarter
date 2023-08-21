@@ -3,34 +3,29 @@
 namespace SandaliaApps\LaraStarter\App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use SandaliaApps\LaraStarter\App\Models\User;
+use Yajra\DataTables\DataTables;
 
 class AdminController extends Controller
 {
 
-    public static function dashboard()
+    public static function dashboard(Request $request)
     {
-        
+        if($request->ajax()){
+            self::getUsers();
+        }
         return view('laraStarter::admin.dashboard');
     }
 
     public static function getUsers(){
-        $userData = "";
 
-        $users = User::all();
+        $user = User::select('id','name','username','email','role_id')->get();
 
-        foreach($users as $user){
-            $userData .= '<tr>
-                            <td>'.$user->id.'</td>
-                            <td>'.$user->name.'</td>
-                            <td>'.$user->username.'</td>
-                            <td>'.$user->email.'</td>
-                            <td>'.$user->role->name.'</td>
-                        </tr>';
-        }
+        return DataTables::of($user)
+        ->editColumn('role', '{{$user->role->slug}}')
+        ->make(true);
 
-        return $userData;
     }
 
 }

@@ -20,9 +20,10 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call(UsersTableSeeder::class);
+        // if you want to seed only Roles then just comment `UsersTableSeeder::class`
         $this->call(RolesTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
 
-        //php artisan db:seed --class="SandaliaApps\\LaraStarter\\Database\\Seeders\\DatabaseSeeder"
+        // Run this command (without curly braces) to seed db {php artisan db:seed --class="SandaliaApps\\LaraStarter\\Database\\Seeders\\DatabaseSeeder"}
     }
 }

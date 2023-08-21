@@ -14,7 +14,7 @@ class AjaxController extends Controller
 
             switch($_GET['action']){
                 case "load_user":
-                    return AdminController::getUsers();
+                    //return AdminController::getUsers();
                 break;
             }
 

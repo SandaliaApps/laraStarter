@@ -15,7 +15,7 @@ class LaraStarterServiceProvider extends ServiceProvider
         // Load package migrations
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->publishes([__DIR__.'/config/laraStarter.php' => config_path('laraStarter.php') ]);
-        $this->publishes([__DIR__.'/public/assets' => public_path('vendor/laraStarter'),], 'public');
+        $this->publishes([__DIR__.'/public/assets' => public_path('vendor/laraStarter/assets')], 'public');
         $this->publishes([__DIR__.'/resources/views' => resource_path('views/vendor/laraStarter'),]);
         $this->publishes([__DIR__.'/database/migrations/' => database_path('migrations')], 'laraStarter-migrations');
 

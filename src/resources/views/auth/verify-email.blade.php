@@ -17,7 +17,7 @@
 <div class="login-box">
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
-        <a href="{{ route('home') }}" class="h1"><b>{{config('app.name','LaraStarter')}}</b></a>
+        <a href="{{ url('/') }}" class="h1"><b>{{config('app.name','LaraStarter')}}</b></a>
       </div>
       <div class="card-body">
         <p class="login-box-msg">Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you?</p>

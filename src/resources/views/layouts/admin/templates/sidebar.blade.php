@@ -1,6 +1,6 @@
 <!-- Brand Logo -->
-<a href="index3.html" class="brand-link">
-  <img src="{{asset('vendor/laraStarter/assets/img/128x128.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+<a href="{{ url('/')}}" class="brand-link">
+  <img src="{{asset('vendor/laraStarter/assets/img/128x128.png')}}" alt="laraStarter logo" class="brand-image img-circle elevation-3" style="opacity: .8">
   <span class="brand-text font-weight-light">{{config('app.name','LaraStarter')}}</span>
 </a>
 

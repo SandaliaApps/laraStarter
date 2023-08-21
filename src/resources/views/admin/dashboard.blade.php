@@ -2,9 +2,7 @@
 
 @push('css')
     <!-- DataTables -->
-<link rel="stylesheet" href="{{asset('vendor/laraStarter/assets/vendor/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
-<link rel="stylesheet" href="{{asset('vendor/laraStarter/assets/vendor/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
-<link rel="stylesheet" href="{{asset('vendor/laraStarter/assets/vendor/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+    <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 @endpush
 
 @section('bodyClass','sidebar-mini')
@@ -81,7 +79,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <table id="example1" class="table table-bordered table-striped">
+          <table id="users" class="table table-bordered table-striped">
             <thead>
             <tr>
               <th>ID</th>
@@ -91,9 +89,6 @@
               <th>Role</th>
             </tr>
             </thead>
-            <tbody id="tbody">
-
-            </tbody>
             <tfoot>
             <tr>
               <th>ID</th>
@@ -112,41 +107,29 @@
 @endsection
 @push('js')
   <!-- DataTables  & Plugins -->
-  <script src="{{asset('vendor/laraStarter/assets/vendor/datatables/jquery.dataTables.min.js')}}"></script>
-  <script src="{{asset('vendor/laraStarter/assets/vendor/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-  <script src="{{asset('vendor/laraStarter/assets/vendor/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-  <script src="{{asset('vendor/laraStarter/assets/vendor/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
-  <script src="{{asset('vendor/laraStarter/assets/vendor/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
-  <script src="{{asset('vendor/laraStarter/assets/vendor/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
-  <script src="{{asset('vendor/laraStarter/assets/vendor/datatables-buttons/js/buttons.html5.min.js')}}"></script>
-  <script src="{{asset('vendor/laraStarter/assets/vendor/datatables-buttons/js/buttons.print.min.js')}}"></script>
-  <script src="{{asset('vendor/laraStarter/assets/vendor/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+  <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset('vendor/laraStarter/assets/js/demo.js')}}"></script>
   <!-- Page specific script -->
   <script>
     $(function () {
-      $('#example1').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
+      
+      var table = $('#users').DataTable({
+          processing: true,
+          serverSide: true,
+          ajax: "{{ route('auth') }}",
+          columns: [
+              {data: 'id', name: 'id'},
+              {data: 'name', name: 'name'},
+              {data: 'username', name: 'username'},
+              {data: 'email', name: 'email'},
+              {data: 'role', name: 'role'},
+          ]
       });
-    });
-
-    $(document).ready(function(){
-      var action = "load_user";
-      $.ajax({
-            url:"{{ route('ajax') }}",
-            type:"GET",
-            data:{action:action},
-            success:function(data){
-              $("#tbody").html(data);
-            }
-      });
+        
     });
   </script>
   

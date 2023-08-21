@@ -50,16 +50,26 @@ php artisan vendor:publish --tag=public --force
 ```sh
 php artisan migrate
 ```
-5. Add following CONSTANT in .env file with Recaptch v3 Site_Key & Secret_Key from [Google Recaptcha](https://www.google.com/recaptcha/about/) 
+5. Seed database with toles & users using the following command
+```sh
+php artisan db:seed --class="SandaliaApps\\LaraStarter\\Database\\Seeders\\DatabaseSeeder"
+```
+6. Remove the default (following) route from `routes\web.php` 
+```sh
+Route::get('/', function () {
+    return view('welcome');
+});
+```
+7. Add following CONSTANT in .env file with Recaptch v3 Site_Key & Secret_Key from [Google Recaptcha](https://www.google.com/recaptcha/about/) 
 ```sh
 RECAPTCHA_SITE_KEY=Your_Site_Key
 RECAPTCHA_SECRET_KEY=YOur_Secret_Key
 ```
-6. Start Sever
+8. Start Server
 ```sh
 php artisan serve
 ```
-7. Then What! Registration & Login systems are fully operational with beautiful admin panel sucure by google recaptcha v3. Just Try and provide feedback. 
+9. Then What! Registration & Login systems are fully operational with beautiful admin panel sucure by google recaptcha v3. Just Try and provide feedback. 
 #### Still working on Documentation & many upcomming features soon
 #### First stable version will be released soon with full documentation
 ### Any suggestionations are welcome

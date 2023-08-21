@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'role_id' => 1,
+            'terms' =>1,
             'name'=> 'Md. Admin',
             'username' => 'admin',
             'email' => 'admin@admin.com',
@@ -24,6 +25,7 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             'role_id' => 2,
+            'terms' =>1,
             'name'=> 'Md. Manager',
             'username' => 'manager',
             'email' => 'manager@manager.com',
@@ -32,6 +34,7 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             'role_id' => 3,
+            'terms' =>1,
             'name'=> 'Md. Customer',
             'username' => 'customer',
             'email' => 'customer@customer.com',

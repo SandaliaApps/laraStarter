@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use SandaliaApps\LaraStarter\App\Http\Controllers\AjaxController;
 use SandaliaApps\LaraStarter\App\Http\Controllers\Auth\ForgotPasswordController;
 use SandaliaApps\LaraStarter\App\Http\Controllers\Auth\LoginController;
 use SandaliaApps\LaraStarter\App\Http\Controllers\Auth\RegisterController;
