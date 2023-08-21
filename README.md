@@ -65,11 +65,23 @@ Route::get('/', function () {
 RECAPTCHA_SITE_KEY=Your_Site_Key
 RECAPTCHA_SECRET_KEY=YOur_Secret_Key
 ```
-8. Start Server
+8. Use mailtrap details in .env file to get testing verification email
+```sh
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=your_username
+MAIL_PASSWORD=your_password
+```
+9. Start Server
 ```sh
 php artisan serve
 ```
-9. Then What! Registration & Login systems are fully operational with beautiful admin panel sucure by google recaptcha v3. Just Try and provide feedback. 
+10. login using any of the following details
+```sh
+email: admin@admin.com or manager@manager.com or customer@customer.com using password: password
+```
+11. Then What! Registration & Login systems are fully operational with beautiful admin panel sucure by google recaptcha v3. Just Try and provide feedback. 
 #### Still working on Documentation & many upcomming features soon
 #### First stable version will be released soon with full documentation
 ### Any suggestionations are welcome
